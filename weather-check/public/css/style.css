@@ -198,7 +198,9 @@ body {
   transform: scaleY(0);
 }
 .error-block{
-  margin-top: 20px;
+  margin-top: 50px;
   font-weight: bold;
   color: #980B1E;
+  font-size: 1em;
+  text-transform: uppercase;
 }

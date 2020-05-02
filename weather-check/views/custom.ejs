@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Weather Check</title>
+    <link rel="stylesheet" type="text/css" href="<%= styleSource %>">
+    <link href='https://fonts.googleapis.com/css?family=Arima+Madurai:300' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div id="bg">
+      <img src="<%= imageSource %>" alt="">
+    </div>
+    <div class="container">
+      <% if(typeof weatherData != "undefined"){ %>
+        <div class="animated-title">
+          <div class="text-top">
+            <div>
+              <span>Location - <%= weatherData.location.name %>, <%= weatherData.location.country %></span>
+              <span>Latitute / Longitude - <%= weatherData.location.lat %> / <%= weatherData.location.lon %></span>
+              <span>Time - <%= weatherData.current.observation_time %></span>
+            </div>
+          </div>
+          <div class="text-bottom">
+            <div>Forecast - <%= weatherData.current.weather_descriptions[0] %></div>
+          </div>
+        </div>
+      <% } %>      
+    </div>
+  </body>
+</html>
