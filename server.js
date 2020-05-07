@@ -8,6 +8,7 @@ const requestURL = 'http://api.weatherstack.com/current'; // Weather API used to
 const access_token = '881e74e04132d381cc2fc0b3c9429191'; // access_token, allows 1000 API calls/month
 let weatherData = null;
 let renderTemplate, imageSource, styleSource, errorText;
+const portNumber = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs'); // set the ejs as the rendering engine. ejs can be used out of the box from the 'views' folder
 const publicDirectoryPath = path.join(__dirname, './public'); // Exposes path to publc folder where all template files reside
@@ -105,6 +106,6 @@ const getWeatherInfo = (city, callback) => {
   });
 }
 
-app.listen(3000, function () {
-  console.log('Weather app listening on port 3000!')
+app.listen(portNumber, function () {
+  console.log(`Weather app listening on port ${portNumber}!` )
 })
