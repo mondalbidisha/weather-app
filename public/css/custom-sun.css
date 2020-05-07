@@ -27,7 +27,7 @@
   height: 800px;
   left: 37%;
   position: absolute;
-  top: 87%;
+  top: 83%;
   transform: translate(-50%, -50%);
   width: 800px;
 }
@@ -68,4 +68,10 @@
   animation-fill-mode: forwards;
   top: 0;
   transform: translate(0, -100%);
+}
+
+.back-link {
+  color: #032802;
+  text-decoration: none !important;
+  text-shadow: 5px 5px 10px #AAEEA8;
 }

@@ -69,3 +69,9 @@
   top: 0;
   transform: translate(0, -100%);
 }
+
+.back-link {
+  color: #2B2E2E;
+  text-decoration: none !important;
+  text-shadow: 5px 5px 10px #D0F441;
+}

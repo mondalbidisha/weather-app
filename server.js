@@ -1,6 +1,7 @@
 const express = require('express');
 const BodyParser = require('body-parser');
 const request = require('request');
+const path = require('path');
 const app = express();
 
 const requestURL = 'http://api.weatherstack.com/current'; // Weather API used to get weather information
@@ -9,9 +10,9 @@ let weatherData = null;
 let renderTemplate, imageSource, styleSource, errorText;
 
 app.set('view engine', 'ejs'); // set the ejs as the rendering engine. ejs can be used out of the box from the 'views' folder
-app.use(express.static('public')); // Express wont allow access to this file by default, so we need to expose it. This code allows us to access all of the static files within the ‘public’ folder.
+const publicDirectoryPath = path.join(__dirname, './public'); // Exposes path to publc folder where all template files reside
+app.use(express.static(publicDirectoryPath)); // Express wont allow access to this file by default, so we need to expose it. This code allows us to access all of the static files within the ‘public’ folder.
 app.use(BodyParser.urlencoded({ extended: true })); 
-
 app.get('/', function(request, response) {
   response.redirect('home'); // Redirects all requests to 'home'  route
 })
@@ -105,5 +106,5 @@ const getWeatherInfo = (city, callback) => {
 }
 
 app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
+  console.log('Weather app listening on port 3000!')
 })
